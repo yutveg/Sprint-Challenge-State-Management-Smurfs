@@ -8,10 +8,13 @@ const SmurfList = props => {
   useEffect(() => props.getSmurfs(), [props.smurfs]);
 
   return (
-    <div>
+    <div className="container">
       <SmurfForm postSmurf={props.postSmurf} />
       {!props.smurfs && <p>there are no smurfs..</p>}
-      {props.smurfs && props.smurfs.map(item => <Smurf smurf={item} />)}
+      <div className="smurf-list">
+        {props.smurfs &&
+          props.smurfs.map(item => <Smurf key={item.id} smurf={item} />)}
+      </div>
     </div>
   );
 };

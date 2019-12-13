@@ -12,10 +12,11 @@ export const getSmurfs = () => dispatch => {
   axios
     .get("http://localhost:3333/smurfs")
     .then(res => dispatch({ type: GET_SMURFS_SUCCESS, payload: res.data }))
-    .catch(err => console.log(err));
+    .catch(err => dispatch({ type: GET_SMURFS_FAIL, payload: err.response }));
 };
 
 export const postSmurf = (name, age, height) => dispatch => {
+  console.log(name, age, height);
   dispatch({ type: POST_SMURF });
   axios
     .post("http://localhost:3333/smurfs", {
