@@ -6,6 +6,9 @@ export const GET_SMURFS_FAIL = "GET_SMURFS_FAIL";
 export const POST_SMURF = "POST_SMURF";
 export const POST_SMURF_SUCCESS = "POST_SMURF_SUCCESS";
 export const POST_SMURF_FAIL = "POST_SMURF_FAIL";
+export const DELETE_SMURF = "DELETE_SMURF";
+export const DELETE_SMURF_SUCCESS = "DELETE_SMURF_SUCCESS";
+export const DELETE_SMURF_FAIL = "DELETE_SMURF_FAIL";
 
 export const getSmurfs = () => dispatch => {
   dispatch({ type: GET_SMURFS });
@@ -24,6 +27,14 @@ export const postSmurf = (name, age, height) => dispatch => {
       age: age,
       height: height
     })
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
+};
+
+export const deleteSmurf = id => dispatch => {
+  dispatch({ type: DELETE_SMURF });
+  axios
+    .delete(`http://localhost:3333/smurfs/${id}`)
     .then(res => console.log(res))
     .catch(err => console.log(err));
 };

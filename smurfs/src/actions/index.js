@@ -5,6 +5,10 @@ export {
   POST_SMURF,
   POST_SMURF_SUCCESS,
   POST_SMURF_FAIL,
+  DELETE_SMURF,
+  DELETE_SMURF_SUCCESS,
+  DELETE_SMURF_FAIL,
   getSmurfs,
-  postSmurf
+  postSmurf,
+  deleteSmurf
 } from "./actions";

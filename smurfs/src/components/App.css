@@ -2,14 +2,41 @@
   text-align: center;
 }
 
+html {
+  background-image: url("../assets/smurfvill.jpg");
+}
+
 .smurf-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  justify-content: space-between;
+  justify-items: center;
+  grid-gap: 25px;
 }
 
 .smurf-card {
+  border: 3px greenyellow dotted;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px 0px black;
+  width: 70%;
   padding: 4%;
-  background-color: grey;
+  background-color: rgb(0, 174, 255);
+}
+
+.smurf-card button {
+  border: 1px rgb(255, 94, 0) solid;
+  background-color: antiquewhite;
+  padding: 0.25% 1.25%;
+  color: black;
+  cursor: pointer;
+  transition: all 375ms ease-in-out;
+}
+
+.smurf-card button:hover {
+  border: 1px antiquewhite solid;
+  background-color: rgb(255, 94, 0);
+  padding: 0.5% 1.5%;
+  font-size: 20px;
 }
 
 .smurf-form {

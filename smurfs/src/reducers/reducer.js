@@ -4,13 +4,17 @@ import {
   GET_SMURFS_FAIL,
   POST_SMURF,
   POST_SMURF_SUCCESS,
-  POST_SMURF_FAIL
+  POST_SMURF_FAIL,
+  DELETE_SMURF,
+  DELETE_SMURF_SUCCESS,
+  DELETE_SMURF_FAIL
 } from "../actions";
 
 const initialState = {
   smurfs: [],
   isFetching: false,
   isPosting: false,
+  isDeleting: false,
   error: ""
 };
 
@@ -48,6 +52,22 @@ export const reducer = (state = initialState, action) => {
         ...state,
         isPosting: false,
         error: action.payload
+      };
+    case DELETE_SMURF:
+      return {
+        ...state,
+        isDeleting: true
+      };
+    case DELETE_SMURF_SUCCESS:
+      return {
+        ...state,
+        smurfs: action.payload,
+        isDeleting: false
+      };
+    case DELETE_SMURF_FAIL:
+      return {
+        ...state,
+        isDeleting: false
       };
     default:
       return state;

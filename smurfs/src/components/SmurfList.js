@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { getSmurfs, postSmurf } from "../actions";
+import { getSmurfs, postSmurf, deleteSmurf } from "../actions";
 import { connect } from "react-redux";
 import Smurf from "./Smurf";
 import SmurfForm from "./SmurfForm";
@@ -13,7 +13,9 @@ const SmurfList = props => {
       {!props.smurfs && <p>there are no smurfs..</p>}
       <div className="smurf-list">
         {props.smurfs &&
-          props.smurfs.map(item => <Smurf key={item.id} smurf={item} />)}
+          props.smurfs.map(item => (
+            <Smurf key={item.id} smurf={item} deleteSmurf={props.deleteSmurf} />
+          ))}
       </div>
     </div>
   );
@@ -29,5 +31,6 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
   getSmurfs,
-  postSmurf
+  postSmurf,
+  deleteSmurf
 })(SmurfList);
