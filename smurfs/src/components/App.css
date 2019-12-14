@@ -2,27 +2,58 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+html {
+  background-image: url("../assets/smurfvill.jpg");
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+.smurf-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  justify-content: space-between;
+  justify-items: center;
+  grid-gap: 25px;
+}
+
+.smurf-card {
+  border: 3px greenyellow dotted;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px 0px black;
+  width: 70%;
+  padding: 4%;
+  background-color: rgb(0, 174, 255);
+}
+
+.smurf-card button {
+  border: 1px rgb(255, 94, 0) solid;
+  background-color: antiquewhite;
+  padding: 0.25% 1.25%;
+  color: black;
+  cursor: pointer;
+  transition: all 375ms ease-in-out;
+}
+
+.smurf-card button:hover {
+  border: 1px antiquewhite solid;
+  background-color: rgb(255, 94, 0);
+  padding: 0.5% 1.5%;
+  font-size: 20px;
+}
+
+.smurf-form {
+  margin: 2% 0;
+}
+
+.smurf-form input {
+  padding: 15px;
+}
+
+.smurf-form button {
   padding: 20px;
-  color: white;
+  margin-left: 5px;
+  cursor: pointer;
+  border: none;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.smurf-form button:hover {
+  background-color: rgb(54, 104, 211);
 }
